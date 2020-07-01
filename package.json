@@ -1,0 +1,14 @@
+{
+  "name": "dpa-li-example",
+  "dependencies": {
+    "@livingdocs/node-sdk": "^0.5.1",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.4.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.4.0",
+    "serverless-plugin-existing-s3": "^2.4.0",
+    "serverless-s3-local": "^0.6.2"
+  }
+}

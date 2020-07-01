@@ -1,0 +1,21 @@
+service: dpa-li-s3push
+plugins:
+  - serverless-s3-local
+  - serverless-offline 
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: s3local
+
+custom: 
+  s3:
+    host: localhost
+    port: 4569
+    directory: /tmp
+
+functions:
+  s3hook:
+    handler: handler.s3hook
+    events:
+      - s3: local-bucket

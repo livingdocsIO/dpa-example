@@ -1,0 +1,99 @@
+{
+    "format": "digitalwires@0.5.13",
+    "entry_id": "QN5d4CjCQXmsatmWytQ3H4QeVwH52NB73UVG9Eg",
+    "updated": "2020-07-01T09:41:12Z",
+    "urn": "urn:newsml:dpa.com:20090101:200629-99-600701",
+    "version_created": "2020-06-29T18:23:44+02:00",
+    "version": 8,
+    "pubstatus": "usable",
+    "embargoed": null,
+    "language": "de",
+    "urgency": 4,
+    "kicker": "Börse in Frankfurt",
+    "headline": "Dow beflügelt Dax",
+    "subhead": null,
+    "teaser": null,
+    "byline": null,
+    "dateline": "Frankfurt/Main (dpa) - ",
+    "article_html": "<section class=\"main\"><p>Eine starke Wall Street hat am Montag dem Dax frisches Leben eingehaucht. Der deutsche Leitindex kratzte an der Marke von 12.300 Punkten und beendete den Handel 1,18 Prozent höher auf 12.232,12 Punkten, nachdem er bis zur US-Börseneröffnung am Nachmittag nur mühsam vorwärts gekommen war. </p><p>Der MDax der mittelgroßen Börsenwerte legte um 0,19 Prozent auf 25.668,74 Punkte zu. In den USA hatte sich der Häusermarkt im Mai wesentlich stärker als von Experten gedacht von der Corona-Krise erholt. Das half den Kursen beiderseits des Atlantiks. Der New Yorker Dow Jones Industrial notierte zum europäischen Handelsschluss mit plus 1,8 Prozent.</p><p>Investoren sind aber nach wie vor hin- und hergerissen zwischen den wieder gestiegenen Corona-Sorgen und Konjunkturdaten, die auf eine Erholung der Wirtschaft hindeuten. Es stehe ein großes Fragezeichen hinter der Aktienmarkterholung, sagte Analyst Craig Erlam vom Währungshändler Oanda. Investoren schienen die Gefahr erneuter virusbedingter Abriegelungen und Einschränkungen weltweit derzeit nicht einzupreisen.</p><p>Der Eurozone-Leitindex EuroStoxx 50 stieg am Montag um 0,87 Prozent auf 3232,02 Punkte. In Paris gewann der Cac 40 0,7 Prozent, der FTSE 100 in London rückte um 1,1 Prozent vor.</p><p>Hierzulande werden die Aktien des nach einem Bilanzskandal ums Überleben kämpfenden Zahlungsdienstleisters Wirecard nun endgültig zum Spielball von Spekulanten. Nach einem Verlust von knapp 99 Prozent in sieben Handelstagen hatten sich die noch im Dax notierten Aktien am Montag zeitweise mehr als verdreifacht. Am Ende gewannen sie 154,49 Prozent auf 3,26 Euro. Solche Kursbewegungen sind allerdings mit fundamentalen Entwicklungen nicht mehr zu erklären. Nach dem Quasi-Totalverlust müssen die Wirecard-Aktien nach aktuellem Stand erst im September ihren Platz im deutschen Leitindex räumen. Die Deutsche Börse kündigte nun aber an, ihr Regelwerk für eine Dax-Mitgliedschaft zu überarbeiten.</p><p>Die Papiere der Lufthansa hatten zunächst deutlich verloren, schafften es am Ende aber mit 0,20 Prozent ins Plus. Großaktionär Heinz Hermann Thiele sagte der Airline nach der staatlichen Rettung einen «schmerzhaften Weg» während einer «fünf bis sechs Jahre» dauernden Sanierung voraus. Ein Börsianer sieht die Lufthansa-Anleger damit noch einmal an die harte Realität erinnert. Seit ihrer inzwischen einwöchigen Mitgliedschaft im MDax haben die Lufthansa-Aktien mehr als elf Prozent verloren. Die Freude über die Zustimmung zum Rettungspaket am vergangenen Donnerstag währte nur kurz.</p><p>Die Aktien von Varta machten mit dem Zieleinlauf noch einen kräftigen Satz nach oben und schlossen mit plus 7,14 Prozent auf Tageshoch. Der Grund der Freude: Varta erhält 300 Millionen Euro Fördermittel zum Aufbau einer Batteriezellenfertigung.</p><p>Im SDax waren Stahlwerte vorne. Salzgitter AG gewannen 9,28 Prozent auf 12,37 Euro. Dabei half ein positiver Analystenkommentar der Credit Suisse. Für die Anteile des Stahlhändlers Klöckner &amp; Co ging es gleich hinter Salzgitter um 7,97 Prozent hoch.</p><p>Der Euro kostete nach Xetra-Börsenschluss 1,1235 US-Dollar. Die Europäische Zentralbank (EZB) hatte den Referenzkurs am Nachmittag auf 1,1284 (Freitag: 1,1213) Dollar festgesetzt, der Dollar hatte damit 0,8862 (0,8918) Euro gekostet.</p><p>Am deutschen Anleihemarkt sank der Rentenindex Rex um 0,01 Prozent auf 145,25 Punkte. Die Umlaufrendite blieb stabil bei minus 0,49 Prozent. Der Bund-Future verlor 0,05 Prozent auf 176,60 Punkte.</p></section>",
+    "infobox_html": null,
+    "linkbox_html": null,
+    "creditline": "dpa",
+    "copyrightnotice": "Copyright 2020, dpa (www.dpa.de). Alle Rechte vorbehalten",
+    "associations": [
+      {
+        "type": "image",
+        "urn": "urn:newsml:dpa.com:20090101:200629-99-600706",
+        "version": 1,
+        "rank": 1,
+        "version_created": "2020-06-29T09:20:28+02:00",
+        "headline": "Dax",
+        "is_featureimage": true,
+        "caption": "Der Dax ist der wichtigste Aktienindex in Deutschland.",
+        "creditline": "Fredrik von Erichsen/dpa",
+        "renditions": [
+          {
+            "size": 2048,
+            "width": 2048,
+            "height": 1365,
+            "mimetype": "image/jpeg",
+            "url": "https://d3hzhyitlnc455.cloudfront.net/v3/image/resize/urn:newsml:dpa.com:20090101:200629-99-600706-v1-s2048.jpeg?signature=4X8ow2l1c74nNIRV65NMk-BaGqA&expires=1593734400"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "type": "dnltype:rubric",
+        "name": "weblines.infoline_rs.wirtschaft",
+        "qcode": "dnlpath:weblines.infoline_rs.wirtschaft",
+        "is_current": false
+      },
+      {
+        "type": "dnltype:dpasubject",
+        "name": "Börsen",
+        "qcode": "dpasubject:260",
+        "rank": 1
+      },
+      {
+        "type": "dnltype:geosubject",
+        "name": "Deutschland",
+        "qcode": "dpacountry:1",
+        "rank": 1
+      },
+      {
+        "type": "dnltype:desk",
+        "name": "wi",
+        "qcode": "dpacat:wi"
+      },
+      {
+        "type": "dnltype:genre",
+        "name": "Zusammenfassung",
+        "qcode": "dpatextgenre:26"
+      },
+      {
+        "type": "dnltype:urgency",
+        "name": "4",
+        "qcode": "urgency:4"
+      }
+    ],
+    "current_rubric_names": [],
+    "rubric_names": [
+      "weblines.infoline_rs.wirtschaft"
+    ],
+    "dpasubject_names": [
+      "Börsen"
+    ],
+    "geosubject_names": [
+      "Deutschland"
+    ],
+    "keyword_names": [],
+    "desk_names": [
+      "wi"
+    ],
+    "genre_names": [
+      "Zusammenfassung"
+    ],
+    "poi_names": [],
+    "scope_names": []
+  }
