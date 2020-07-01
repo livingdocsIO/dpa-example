@@ -2,13 +2,24 @@ service: dpa-li-s3push
 plugins:
   - serverless-s3-local
   - serverless-offline 
+  - serverless-step-functions
+  - serverless-step-functions-offline
 
 provider:
   name: aws
   runtime: nodejs12.x
   profile: s3local
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "states:startExecution"
+      Resource:
+        - "*"
 
 custom: 
+  stepFunctionsOffline:
+    Import: import
+
   s3:
     host: localhost
     port: 4569
@@ -19,3 +30,27 @@ functions:
     handler: handler.s3hook
     events:
       - s3: local-bucket
+    environment:
+      statemachine_arn: ${self:resources.Outputs.importStateMachine.Value}
+  import:
+    hanlder: import/index.handler
+    name: startImport
+
+stepFunctions:
+  stateMachines:
+    importStateMachine:
+      name: importStateMachine
+      definition:
+        startAt: Import
+        States:
+          Import:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:startImport
+            End: true
+
+resources:
+  Outputs:
+    importStateMachine:
+      Description: The ARN of the example state machine
+      Value:
+        Ref: importStateMachine

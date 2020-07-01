@@ -1,6 +1,11 @@
 const AWS = require('aws-sdk')
 const _ = require('lodash')
 const axios = require('axios')
+const stepfunctions = new AWS.StepFunctions()
+
+module.exports.import = () => {
+  console.log('IN IMPORT', arguments)
+}
 
 module.exports.s3hook = async (event, context) => {
   const getters = _.map(event.Records, (record) => {
@@ -51,4 +56,17 @@ module.exports.s3hook = async (event, context) => {
   const res = await axios.post(`${process.env.LI_HOST}/api/v1/import/images`, data, config)
   const batchId = res.data.id  
   console.log('import batch id', batchId)
+
+  const stateMachineArn = process.env.statemachine_arn
+  const params = {
+    stateMachineArn
+  }
+
+  return stepfunctions.startExecution(params).promise().then(() => {
+    console.log(`Your statemachine ${stateMachineArn} executed successfully`)
+    return `Your statemachine ${stateMachineArn} executed successfully`
+  }).catch(error => {
+    console.log('error', error.message)
+    return error.message
+  })
 }
