@@ -1,7 +1,8 @@
 service: dpa-li-s3push
 plugins:
   - serverless-s3-local
-  - serverless-offline 
+  - serverless-dynamodb-local
+  - serverless-offline
 
 provider:
   name: aws
@@ -13,9 +14,47 @@ custom:
     host: localhost
     port: 4569
     directory: /tmp
+  dynamodb:
+  # If you only want to use DynamoDB Local in some stages, declare them here
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
+    # Uncomment only if you already have a DynamoDB running locally
+    # noStart: true
 
 functions:
   s3hook:
     handler: handler.s3hook
     events:
       - s3: local-bucket
+  imagesImported:
+    handler: handler.imagesImported
+    events:
+      - http: POST /images-imported
+  documentsImported:
+    handler: handler.documentsImported
+    events:
+      - http: POST /documents-imported
+
+resources: # CloudFormation template syntax
+  Resources:
+    ImportsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ImportsTable
+        AttributeDefinitions:
+          - AttributeName: batchId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: batchId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
