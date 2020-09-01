@@ -1,44 +1,44 @@
 {
   "format": "digitalwires@0.5.14",
-  "entry_id": "LIGpb9tqZg8c9trLyEhTFfFk590Mxsmtx34vz1haw",
-  "updated": "2020-08-31T18:53:50Z",
-  "urn": "urn:newsml:dpa.com:20090101:200830-99-360770",
-  "version_created": "2020-08-30T20:48:45+02:00",
+  "entry_id": "nz2AZrY9x2PUiQoOt2liZohxoGnGhJ2JMaXImVik3A",
+  "updated": "2020-09-01T13:18:12Z",
+  "urn": "urn:newsml:dpa.com:20090101:200828-99-343249",
+  "version_created": "2020-08-28T12:21:43+02:00",
   "version": 2,
   "pubstatus": "usable",
   "embargoed": null,
   "language": "de",
   "urgency": 4,
-  "kicker": "Umweltschutz",
-  "headline": "UN und Nasa fordern besseren Schutz für tropischen Regenwald",
+  "kicker": "Start der Spielemesse Gamescom",
+  "headline": "Scheuer kündigt finale Phase für Games-Förderung an",
   "subhead": null,
-  "teaser": "Nur noch die Hälfte des tropischen Regenwalds ist einer neuen Studie zufolge gesund. Forderungen nach einem besseren Schutz werden laut.",
+  "teaser": null,
   "byline": null,
-  "dateline": "New York (dpa) - ",
-  "article_html": "<section class=\"main\"><p>Die Vereinten Nationen und die US-Raumfahrtbehörde Nasa haben gemeinsam mit mehreren Forschungseinrichtungen einen besseren Schutz des verbliebenen tropischen Regenwalds gefordert.</p><p>Einer neuen Studie zufolge sei nur rund die Hälfte dieses Waldes von «hoher Qualität» - beispielsweise in Hinblick auf die Speicherung von Kohlenstoff, hieß es von den beteiligten Institutionen.</p><p>Diese Wälder befänden sich hauptsächlich im Amazonas und dem Kongobecken. Nur rund 6,5 Prozent davon stehe aber offiziell unter Schutz. Das müsse sich dringend ändern, forderten die Institutionen.</p></section>",
+  "dateline": "Köln (dpa) - ",
+  "article_html": "<section class=\"main\"><p>Die Games-Branche kann zum Start der Spielemesse Gamescom neue Hoffnung für eine zügige Förderung durch die Bundesregierung schöpfen. Bundesminister Andreas Scheuer (CSU) kündigte in seiner politischen Eröffnungsrede den Start des finalen Förderprogramms an. </p><p>Deutschland soll damit als Standort für die als besonders innovativ geltende Games-Entwicklung international konkurrenzfähig gemacht werden. «Bei uns werden viele Spiele verkauft - insbesondere in Zeiten von Corona - aber leider noch nicht entwickelt», sagte Scheuer am Freitag. «Heute startet die zweite Phase des Förderprogramms - mit einem schnelleren Verfahren», versprach der Minister für Verkehr und digitale Infrastruktur. Die EU-Kommission habe ihr Okay für die Millionenförderung gegeben. «Bis 2023 stehen damit jedes Jahr 50 Millionen Euro zur Verfügung.»</p><p>Seit dem Start der Pilotphase im Juni 2019 hatte es viel Kritik gegeben. Gerade kleine Start-ups mussten wegen schleppender Bearbeitung ihrer Anträge um ihre Existenz bangen. Das habe mitunter bis zu fünf Monate gedauert, kritisierte zuletzt die medienpolitische Sprecherin der Grünen-Bundestagsfraktion, Margit Stumpp. «Eine Zeitspanne, die besonders jungen, innovativen Unternehmen einen Strich durch die Rechnung machen kann.»</p><p>Die Gamescom (27. bis 30. August) findet wegen der Corona-Pandemie erstmals ausschließlich digital statt - mit einem prallen Programm im Netz. Im vergangenen Jahr habe das Event noch 500 000 Besucher auf das Messegelände und in die Stadt gezogen, sagte Gerald Böse, Vorsitzender der Geschäftsführung der Koelnmesse. Die digitale Ausrichtung sei aber auch ein «wichtiges Signal, dass wir ein solches Event auf die Beine stellen können», sagte Felix Falk, Geschäftsführer des Branchenverbands game. «Die Games-Branche ist dafür mutig und innovativ genug.»</p></section>",
   "infobox_html": null,
-  "linkbox_html": "<section class=\"linkbox\"><ul><li><a href=\"http://dpaq.de/24YDk\">Artikel in Nature</a></li></ul></section>",
+  "linkbox_html": null,
   "creditline": "dpa",
   "copyrightnotice": "Copyright 2020, dpa (www.dpa.de). Alle Rechte vorbehalten",
   "notepad": null,
   "associations": [
     {
       "type": "image",
-      "urn": "urn:newsml:dpa.com:20090101:200830-99-366653-123456789123456",
+      "urn": "urn:newsml:dpa.com:20090101:200828-99-343260",
       "version": 2,
       "rank": 1,
-      "version_created": "2020-08-30T20:43:07+02:00",
-      "headline": "Schutz für tropischen Regenwald",
+      "version_created": "2020-08-28T12:21:29+02:00",
+      "headline": "Andreas Scheuer",
       "is_featureimage": true,
-      "caption": "Der Fluss Tahan fließt durch den Regenwald im National Park Taman Negara in Malaysia.",
-      "creditline": "Lisa Ducret/dpa",
+      "caption": "Andreas Scheuer (CSU), Bundesminister für Verkehr und digitale Infrastruktur, spricht auf einer Pressekonferenz in Berlin.",
+      "creditline": "Johannes Neudecker/dpa",
       "renditions": [
         {
           "size": 2048,
           "width": 2048,
-          "height": 1362,
+          "height": 998,
           "mimetype": "image/jpeg",
-          "url": "https://d3hzhyitlnc455.cloudfront.net/v3/image/resize/urn:newsml:dpa.com:20090101:200830-99-366653-v2-s2048.jpeg?signature=1BRX_LfejupweyRew15JA6HpTcI&expires=1599091200"
+          "url": "https://d3hzhyitlnc455.cloudfront.net/v3/image/resize/urn:newsml:dpa.com:20090101:200828-99-343260-v2-s2048.jpeg?signature=J7pmSLDaj4MYKiamVsDoYZLiB9c&expires=1599177600"
         }
       ]
     }
@@ -46,56 +46,68 @@
   "categories": [
     {
       "type": "dnltype:rubric",
-      "name": "weblines.infoline_rs.wissenschaft",
-      "qcode": "dnlpath:weblines.infoline_rs.wissenschaft",
+      "name": "weblines.infoline_rs.netzwelt",
+      "qcode": "dnlpath:weblines.infoline_rs.netzwelt",
       "is_current": true
     },
     {
       "type": "dnltype:dpasubject",
-      "name": "Natur",
-      "qcode": "dpasubject:493",
+      "name": "Internet",
+      "qcode": "dpasubject:377",
       "rank": 1
     },
     {
       "type": "dnltype:dpasubject",
-      "name": "Naturschutz",
-      "qcode": "dpasubject:479",
+      "name": "Computer",
+      "qcode": "dpasubject:193",
       "rank": 2
     },
     {
       "type": "dnltype:dpasubject",
-      "name": "Wissenschaft",
-      "qcode": "dpasubject:106",
+      "name": "Messen",
+      "qcode": "dpasubject:939",
       "rank": 3
     },
     {
       "type": "dnltype:dpasubject",
-      "name": "UN",
-      "qcode": "dpasubject:176",
+      "name": "Spiele",
+      "qcode": "dpasubject:873",
       "rank": 4
     },
     {
       "type": "dnltype:keyword",
-      "name": "Tropischer Regenwald",
+      "name": "Gamescom",
       "qcode": null,
       "rank": 1
     },
     {
       "type": "dnltype:keyword",
-      "name": "Umweltschutz",
+      "name": "Digitalisierung",
       "qcode": null,
       "rank": 2
+    },
+    {
+      "type": "dnltype:keyword",
+      "name": "Andreas Scheuer",
+      "qcode": null,
+      "rank": 3
+    },
+    {
+      "type": "dnltype:geosubject",
+      "name": "Deutschland",
+      "qcode": "dpacountry:1",
+      "rank": 1
     },
     {
       "type": "dnltype:geosubject",
       "name": "International",
       "qcode": "dpacountry:196",
-      "rank": 1
+      "rank": 2
     },
     {
       "type": "dnltype:desk",
-      "name": "Vermischtes",
-      "qcode": "dpacat:vm"
+      "name": "wi",
+      "qcode": "dpacat:wi"
     },
     {
       "type": "dnltype:genre",
@@ -109,26 +121,28 @@
     }
   ],
   "current_rubric_names": [
-    "weblines.infoline_rs.wissenschaft"
+    "weblines.infoline_rs.netzwelt"
   ],
   "rubric_names": [
-    "weblines.infoline_rs.wissenschaft"
+    "weblines.infoline_rs.netzwelt"
   ],
   "dpasubject_names": [
-    "Natur",
-    "Naturschutz",
-    "Wissenschaft",
-    "UN"
+    "Internet",
+    "Computer",
+    "Messen",
+    "Spiele"
   ],
   "geosubject_names": [
+    "Deutschland",
     "International"
   ],
   "keyword_names": [
-    "Tropischer Regenwald",
-    "Umweltschutz"
+    "Gamescom",
+    "Digitalisierung",
+    "Andreas Scheuer"
   ],
   "desk_names": [
-    "vm"
+    "wi"
   ],
   "genre_names": [
     "Meldung"
