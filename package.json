@@ -3,8 +3,10 @@
   "dependencies": {
     "@livingdocs/node-sdk": "^0.5.1",
     "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
     "lodash": "^4.17.15",
     "lodash.template": "^4.4.0",
+    "nanoid": "^3.1.12",
     "serverless-dynamodb-client": "0.0.2",
     "serverless-dynamodb-local": "^0.2.39"
   },
