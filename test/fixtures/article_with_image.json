@@ -1,0 +1,76 @@
+{
+  "format": "digitalwires@0.5.14",
+  "entry_id": "nz2AZrY9x2PUiQoOt2liZohxoGnGhJ2JMaXImVik3A",
+  "updated": "2020-09-01T13:18:12Z",
+  "urn": "urn:newsml:dpa.com:20090101:200828-99-343249",
+  "version_created": "2020-08-28T12:21:43+02:00",
+  "version": 2,
+  "pubstatus": "usable",
+  "embargoed": null,
+  "language": "de",
+  "urgency": 4,
+  "kicker": "Start der Spielemesse Gamescom",
+  "headline": "Scheuer kündigt finale Phase für Games-Förderung an",
+  "subhead": "a subhead",
+  "teaser": "an awesome teaser",
+  "byline": "Köln (dpa)",
+  "dateline": "2020",
+  "article_html": "<section class=\"main\"><h2>Subtitle</h2><p>Die Games-Branche kann zum Start der Spielemesse Gamescom neue Hoffnung für eine zügige Förderung durch die Bundesregierung schöpfen. Bundesminister Andreas Scheuer (CSU) kündigte in seiner politischen Eröffnungsrede den Start des finalen Förderprogramms an.</p></section>",
+  "infobox_html": null,
+  "linkbox_html": null,
+  "creditline": "dpa",
+  "copyrightnotice": "Copyright 2020, dpa (www.dpa.de). Alle Rechte vorbehalten",
+  "notepad": null,
+  "associations": [
+    {
+      "type": "image",
+      "urn": "urn:newsml:dpa.com:20090101:200828-99-343260",
+      "version": 2,
+      "rank": 1,
+      "version_created": "2020-08-28T12:21:29+02:00",
+      "headline": "Andreas Scheuer",
+      "is_featureimage": true,
+      "caption": "Andreas Scheuer (CSU), Bundesminister für Verkehr und digitale Infrastruktur, spricht auf einer Pressekonferenz in Berlin.",
+      "creditline": "Johannes Neudecker/dpa",
+      "renditions": [
+        {
+          "size": 2048,
+          "width": 2048,
+          "height": 998,
+          "mimetype": "image/jpeg",
+          "url": "https://d3hzhyitlnc455.cloudfront.net/v3/image/resize/urn:newsml:dpa.com:20090101:200828-99-343260-v2-s2048.jpeg?signature=J7pmSLDaj4MYKiamVsDoYZLiB9c&expires=1599177600"
+        }
+      ]
+    }
+  ],
+  "categories": [],
+  "current_rubric_names": [
+    "weblines.infoline_rs.netzwelt"
+  ],
+  "rubric_names": [
+    "weblines.infoline_rs.netzwelt"
+  ],
+  "dpasubject_names": [
+    "Internet",
+    "Computer",
+    "Messen",
+    "Spiele"
+  ],
+  "geosubject_names": [
+    "Deutschland",
+    "International"
+  ],
+  "keyword_names": [
+    "Gamescom",
+    "Digitalisierung",
+    "Andreas Scheuer"
+  ],
+  "desk_names": [
+    "wi"
+  ],
+  "genre_names": [
+    "Meldung"
+  ],
+  "poi_names": [],
+  "scope_names": []
+}
