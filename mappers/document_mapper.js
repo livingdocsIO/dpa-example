@@ -6,6 +6,9 @@ module.exports = {
       title: dpaArticle.headline
     }
   },
+  mapContentType: function (dpaArticle) {
+    return 'regular'
+  },
   mapDocument: function (abstractArticle) {
     const content = transmogrifier(abstractArticle)
       .rename('header', 'head')
