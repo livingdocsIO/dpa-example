@@ -30,12 +30,19 @@ export LI_HOST='https://server.livingdocs.io'
 
 Note: make sure to configure an API token that has write rights.
 
-4. Start serverless with your profile
+5. Set Importer ENV variables
+
+```
+export LI_IMPORT_WEBHOOK_HOST='http://localhost:3000/dev'
+export LI_IMPORT_AWS_HOST='http://localhost:4569'
+```
+
+6. Start serverless with your profile
 ```
 AWS_PROFILE=s3local sls offline start
 ```
 
-5. Test the import (in a new cl window)
+7. Test the import (in a new cl window)
 ```
 aws --endpoint http://localhost:4569 s3 cp ./test.json s3://local-bucket/test-transfered-foo.json --profile s3local
 ```
@@ -66,7 +73,7 @@ Navigate to `mappers/document_mapper` and adapt the `mapContentType` method to r
 
 ### Design
 
-Navigate to `mappers/document_mapper` and adapt the `mapDocument` method. Use the `transmogrifier` plugin to transform the generic DPA Livingdocs design to your custom design. For documentation about the transmogrifier, navigate to the codefile `lib/transmogrifier.js`.
+Navigate to `mappers/document_mapper` and adapt the `mapDocument` method. Use the `transmogrifier` plugin to transform the generic DPA Livingdocs design to your custom design. For documentation about the transmogrifier, navigate to the codefile `lib/transmogrifier/index.js`.
 
 The generic Livingdocs DPA Design will always have the following structure:
 - header
