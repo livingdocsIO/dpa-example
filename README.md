@@ -53,7 +53,7 @@ Note: the image urls of DPA feeds expire after a while. If the image upload fail
 
 Note: If you don't use the Livingdocs service sandbox or magazine project, you need to adapt the boilerplate to your specific design.
 
-## Customizing
+## Customizing
 
 This section assumes that you have your own design and want to adapt the DPA importer to this design and your custom metadata.
 
@@ -71,7 +71,7 @@ For the available metadata on the DPA source documents, see their documentation:
 
 Navigate to `mappers/document_mapper` and adapt the `mapContentType` method to return the handle for the target content-type in Livingdocs.
 
-### Design
+### Design
 
 Navigate to `mappers/document_mapper` and adapt the `mapDocument` method. Use the `transmogrifier` plugin to transform the generic DPA Livingdocs design to your custom design. For documentation about the transmogrifier, navigate to the codefile `lib/transmogrifier/index.js`.
 
