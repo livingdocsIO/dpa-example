@@ -44,22 +44,22 @@ module.exports = function (dpaArticle, images) {
     if (elm.type !== 'tag') return
     switch (elm.name) {
       case 'dnl-youtubeembed':
-        mapYoutubeEmbed($, elm, liArticle)
+        mapYoutubeEmbed.call(this, $, elm, liArticle)
         break
       case 'dnl-twitterembed':
-        mapTwitterEmbed($, elm, liArticle)
+        mapTwitterEmbed.call(this, $, elm, liArticle)
          break
       case 'a':
-        mapATag($, elm, liArticle)
+        mapATag.call(this, $, elm, liArticle)
         break
       case 'p':
-        mapPTag($, elm, liArticle)
+        mapPTag.call(this, $, elm, liArticle)
         break
       case 'h2':
-        mapH2Tag($, elm, liArticle)
+        mapH2Tag.call(this, $, elm, liArticle)
         break
       case 'table':
-        mapTableTag($, elm, liArticle)
+        mapTableTag.call(this, $, elm, liArticle)
         break
       default:
         console.error(`unhandled dpa html tag: ${elm.name}`)
@@ -105,7 +105,7 @@ function mapTableTag ($, elm, liArticle) {
     identifier: 'free-html',
     id: `doc-${nanoid()}`,
     content: {
-      'free-html': $(this).html()
+      'free-html': `<table>${$(this).html()}</table>`
     }
   })
 }

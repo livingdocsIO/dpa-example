@@ -41,6 +41,7 @@ describe('Map DPA article to DPA Design:', function () {
       source: 'bar'
     })
     assert.equal(liArticle[3].identifier, 'subtitle')
+    assert.equal(liArticle[3].content.text, 'Subtitle')
     assert.equal(liArticle[4].identifier, 'paragraph')
     assert.equal(liArticle.length, 5)
   })
