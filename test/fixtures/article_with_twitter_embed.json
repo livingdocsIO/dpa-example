@@ -15,7 +15,7 @@
   "teaser": "an awesome teaser",
   "byline": "Köln (dpa)",
   "dateline": "2020",
-  "article_html": "<section class=\"main\"><h2>Subtitle</h2><dnl-youtubeembed src=\"https://www.youtube-nocookie.com/embed/fyWS-sZWxdc\"></dnl-youtubeembed><p>Die Games-Branche kann zum Start der Spielemesse Gamescom neue Hoffnung für eine zügige Förderung durch die Bundesregierung schöpfen. Bundesminister Andreas Scheuer (CSU) kündigte in seiner politischen Eröffnungsrede den Start des finalen Förderprogramms an.</p></section>",
+  "article_html": "<section class=\"main\"><h2>Subtitle</h2><dnl-twitterembed src=\"https://twitter.com/ianwhooper/status/845235807866769409\"></dnl-twitterembed><p>Die Games-Branche kann zum Start der Spielemesse Gamescom neue Hoffnung für eine zügige Förderung durch die Bundesregierung schöpfen. Bundesminister Andreas Scheuer (CSU) kündigte in seiner politischen Eröffnungsrede den Start des finalen Förderprogramms an.</p></section>",
   "infobox_html": null,
   "linkbox_html": null,
   "creditline": "dpa",

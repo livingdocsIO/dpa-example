@@ -43,6 +43,12 @@ module.exports = function (dpaArticle, images) {
   $('section').children().each(function (i, elm) {
     if (elm.type !== 'tag') return
     switch (elm.name) {
+      case 'dnl-youtubeembed':
+        mapYoutubeEmbed($, elm, liArticle)
+        break
+      case 'dnl-twitterembed':
+        mapTwitterEmbed($, elm, liArticle)
+         break
       case 'a':
         mapATag($, elm, liArticle)
         break
@@ -64,41 +70,14 @@ module.exports = function (dpaArticle, images) {
 }
 
 function mapATag ($, elm, liArticle) {
-  if (elm.attribs.class === 'embed externalLink') {
-    const href = elm.attribs.href
-    if (href.includes('youtube.com')) {
-      // https://www.youtube.com/watch?v=fyWS-sZWxdc
-      const id = href.match(/(.*)youtube\.com\/watch\?v=(.+)/)[2]
-      liArticle.push({
-        identifier: 'iframe',
-        id: `doc-${nanoid()}`,
-        content: {
-          iframe: `<div class="responsiveContainer"
-            style="position: relative; height: 0px; overflow: hidden; max-width: 100%; padding-bottom: 55%;">
-              <iframe src="https://www.youtube.com/embed/${id}"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-              </iframe>
-            </div>`
-        }
-      })
-    } else if (href.includes('twitter.com')) {
-      console.error('twitter embed not implemented', href) // TODO we need an example, none in the docs
-    } else {
-      console.error(`Unknown DPA embed: ${href}. Skipping.`)
+  // just wrap in a p tag
+  liArticle.push({
+    identifier: 'paragraph',
+    id: `doc-${nanoid()}`,
+    content: {
+      text: $(this).html()
     }
-  } else {
-    // just wrap in a p tag
-    liArticle.push({
-      identifier: 'paragraph',
-      id: `doc-${nanoid()}`,
-      content: {
-        text: $(this).html()
-      }
-    })
-  }
+  })
 }
 
 function mapPTag ($, elm, liArticle) {
@@ -127,6 +106,48 @@ function mapTableTag ($, elm, liArticle) {
     id: `doc-${nanoid()}`,
     content: {
       'free-html': $(this).html()
+    }
+  })
+}
+
+function mapYoutubeEmbed ($, elm, liArticle) {
+  const embedUrl = elm.attribs.src
+  liArticle.push({
+    identifier: 'iframe',
+    id: `doc-${nanoid()}`,
+    content: {
+      iframe: `<div class="responsiveContainer"
+        style="position: relative; height: 0px; overflow: hidden; max-width: 100%; padding-bottom: 55%;">
+          <iframe src="${embedUrl}"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+          </iframe>
+        </div>`
+    }
+  })
+}
+
+function mapTwitterEmbed ($, elm, liArticle) {
+  const url = elm.attribs.src
+  const parts = url.split('/')
+  // simple assumption that id is always last part of url
+  const id = parts[parts.length - 1]
+  liArticle.push({
+    identifier: 'tweet',
+    id: `doc-${nanoid()}`,
+    content: {
+      tweet: `<div class="twitter-tweet twitter-tweet-rendered"
+        style="display: flex; max-width: 550px; width: 100%; margin-top: 10px; margin-bottom: 10px;">
+          <iframe id="twitter-widget-0" scrolling="no" frameborder="0"
+            allowtransparency="true" allowfullscreen="true" class=""
+            style="position: static; visibility: visible; width: 550px; height: 561px;
+            display: block; flex-grow: 1;" title="Twitter Tweet"
+            src="https://platform.twitter.com/embed/index.html?dnt=false&amp;embedId=twitter-widget-0&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1305463562878382081&amp;lang=en&amp;origin=about%3Ablank&amp;partner=tweetdeck&amp;theme=light&amp;widgetsVersion=219d021%3A1598982042171&amp;width=550px"
+            data-tweet-id="${id}" tabindex="-1">
+          </iframe>
+        </div>`
     }
   })
 }

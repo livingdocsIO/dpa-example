@@ -3,6 +3,7 @@ const map = require('../mappers/map_dpa_article_to_dpa_design')
 const simpleArticle = require('./fixtures/simple_article.json')
 const articleWithImage = require('./fixtures/article_with_image.json')
 const articleWithVideo = require('./fixtures/article_with_youtube.json')
+const articleWithTweet = require('./fixtures/article_with_twitter_embed.json')
 const articleWithTable = require('./fixtures/aritcle_with_table.json')
 
 describe('Map DPA article to DPA Design:', function () {
@@ -49,6 +50,13 @@ describe('Map DPA article to DPA Design:', function () {
     assert.equal(liArticle.length, 5)
     assert.equal(liArticle[3].identifier, 'iframe')
     assert.equal(liArticle[3].content.iframe.includes('fyWS-sZWxdc'), true)
+  })
+
+  it('maps an article with an embedded twitter', function () {
+    const liArticle = map(articleWithTweet, [])
+    assert.equal(liArticle.length, 5)
+    assert.equal(liArticle[3].identifier, 'tweet')
+    assert.equal(liArticle[3].content.tweet.includes('845235807866769409'), true)
   })
 
   it('maps an article with a table', function () {
