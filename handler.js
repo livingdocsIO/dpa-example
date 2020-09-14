@@ -1,54 +1,98 @@
-const AWS = require('aws-sdk')
 const _ = require('lodash')
-const axios = require('axios')
+const {getArticlesFromBucket} = require('./lib/s3_helpers')
+const {getImages} = require('./lib/dpa_parsers')
+const {importImages, getImageImport, importArticles} = require('./lib/livingdocs_connector')
+const {storeImageImportWithDPAArticles, failImport, getDPAArticlesImport, succeedImport, storeDocumentImport} = require('./lib/db_connector')
 
-module.exports.s3hook = async (event, context) => {
-  const getters = _.map(event.Records, (record) => {
-    const bucket = record.s3.bucket.name
-    const key = record.s3.object.key
-
-    async function getArticle () {
-      const S3 = new AWS.S3({
-        s3ForcePathStyle: true,
-        endpoint: new AWS.Endpoint('http://localhost:4569')
-      })
-      const data = await S3.getObject({ Bucket: bucket, Key: key }).promise()
-      const article = JSON.parse(data.Body.toString('utf-8'))
-      return article
+module.exports = {
+  documentsImported: async (data) => {
+    if (!data.body) {
+      console.error('webhook response for document import has no body')
+      return
     }
-
-    return getArticle()
-  })
-
-  const articles = await Promise.all(getters)
-  const images = _.reduce(articles, (arr, article) => {
-    for (const as of article.associations) {
-      if (as.type === 'image') arr.push(as)
-    }
-    return arr
-  },[])
-  
-
-  const config = {
-    headers: {Authorization: `Bearer ${process.env.LI_TOKEN}`}
-  }
-  const data = {
-    systemName: 'dpa-import-example',
-    images: _.map(images, (i) => {
-      return {
-        url: i.renditions[0].url,
-        id: i.urn,
-        fileName: i.headline,
-        metadata: {
-          title: i.headline,
-          caption: i.caption,
-          source: i.creditline,
-          createdAt: i.version_created
-        }
+    try {
+      const body = JSON.parse(data.body)
+      if (!body.source === 'livingdocs-document-import') {
+        console.error(`webhook called from unknown source: ${data.body.source}`)
+        return
       }
-    })
+      const {id, state, overview} = body
+      if (state !== 'success') {
+        const error = `Document import with batch id "${id}" was not successful: ${state}`
+        console.error(error)
+        return failImport(id, error)
+      }
+      // at least one of the documents failed -> we choose to set failed then
+      const failedCount = _.get(overview, 'details.failed', 0)
+      if (failedCount > 0) {
+        const error = `Document import with batch id "${id}" had ${failedCount} failed documents. Aborting...`
+        console.error(error)
+        return failImport(id, error)
+      }
+      // otherwise succeed
+      succeedImport(id)
+      console.log(`Document import with id "${id}" succeeded.`)
+    } catch (e) {
+      console.error(e)
+    }
+  },
+  imagesImported: async (data) => {
+    if (!data.body) {
+      console.error('webhook response for image import has no body')
+      return
+    }
+    try {
+      const body = JSON.parse(data.body)
+      if (!body.source === 'livingdocs-image-import') {
+        console.error(`webhook called from unknown source: ${data.body.source}`)
+        return
+      }
+      const {id, state, overview} = body
+      // job failed (internal error)
+      if (state !== 'success') {
+        const error = `Image import with batch id "${id}" was not successful: ${state}`
+        console.error(error)
+        return failImport(id, error)
+      }
+      // at least one of the images failed -> we choose to abort then
+      const failedCount = _.get(overview, 'details.failed', 0)
+      if (failedCount > 0) {
+        const error = `Image import with batch id "${id}" had ${failedCount} failed images. Aborting...`
+        console.error(error)
+        return failImport(id, error)
+      }
+
+      // get the image batch result from Livingdocs
+      const imageImport = await getImageImport(id)
+
+      // check if state is consistent (success)
+      if (imageImport.state !== 'success') {
+        const error = `Inconsistent result after fetching batch id: ${id}, status: ${imageImport.state}, expected: success`
+        console.error(error)
+        return failImport(id, error)
+      }
+      // check that all image states are consistent (no failed)
+      const livingdocsImages = imageImport.images
+      if (_.find(livingdocsImages, i => i.status === 'failed')) {
+        const error = `Inconsistent result after fetching batch id: ${id}, ${i}`
+        console.error(error)
+        return failImport(error)
+      }
+      // nothing wrong with the image import, succeed it
+      await succeedImport(id)
+
+      const articles = await getDPAArticlesImport(id)
+      const batchId = await importArticles(articles, livingdocsImages)
+      return storeDocumentImport(batchId)
+    } catch (e) {
+      console.error(e)
+    }
+  },
+  // Entry point
+  s3hook: async (event, context) => {
+    const articles = await getArticlesFromBucket(event.Records)
+    const images = getImages(articles)
+    const batchId = await importImages(images)
+    return storeImageImportWithDPAArticles(batchId, articles)
   }
-  const res = await axios.post(`${process.env.LI_HOST}/api/v1/import/images`, data, config)
-  const batchId = res.data.id  
-  console.log('import batch id', batchId)
 }
