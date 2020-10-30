@@ -92,8 +92,13 @@ module.exports = {
   // Entry point
   s3hook: async (event, context) => {
     const articles = await getArticlesFromBucket(event.Records)
-    const images = getImages(articles)
+    const filteredArticles = _.filter(articles, a => !!a)
+    if (_.isEmpty(filteredArticles)) {
+      console.error('No articles to process. Stopping...')
+      return
+    }
+    const images = getImages(filteredArticles)
     const batchId = await importImages(images)
-    return storeImageImportWithDPAArticles(batchId, articles)
+    return storeImageImportWithDPAArticles(batchId, filteredArticles)
   }
 }
