@@ -1,3 +1,4 @@
+require('dotenv').config()
 const _ = require('lodash')
 const {getArticlesFromBucket} = require('./lib/s3_helpers')
 const {getImages} = require('./lib/dpa_parsers')
