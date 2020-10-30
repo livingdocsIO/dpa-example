@@ -35,7 +35,18 @@ Note: make sure to configure an API token that has write rights.
 AWS_PROFILE=s3local sls offline start
 ```
 
-6. Test the import (in a new cl window)
+6. Get a test file
+
+You need to get a test file with your own DPA Infocom Login.
+a. Login at https://api-portal.dpa-newslab.com/
+b. Select S3 Push
+c. Click "Preview" on any of the articles in the Feed
+d. Go to the "JSON" tab
+e. Copy and paste the complete JSON into the `test.json` file in this repository
+
+![DPA Test File](./get-dpa-test-article.png)
+
+7. Test the import (in a new cl window)
 ```
 aws --endpoint http://localhost:4569 s3 cp ./test.json s3://local-bucket/test-transfered-foo.json --profile s3local
 ```
