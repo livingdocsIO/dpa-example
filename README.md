@@ -30,19 +30,12 @@ export LI_HOST='https://server.livingdocs.io'
 
 Note: make sure to configure an API token that has write rights.
 
-5. Set Importer ENV variables
-
-```
-export LI_IMPORT_WEBHOOK_HOST='http://localhost:3000/dev'
-export LI_IMPORT_AWS_HOST='http://localhost:4569'
-```
-
-6. Start serverless with your profile
+5. Start serverless with your profile
 ```
 AWS_PROFILE=s3local sls offline start
 ```
 
-7. Test the import (in a new cl window)
+6. Test the import (in a new cl window)
 ```
 aws --endpoint http://localhost:4569 s3 cp ./test.json s3://local-bucket/test-transfered-foo.json --profile s3local
 ```

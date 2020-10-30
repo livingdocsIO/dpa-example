@@ -3,13 +3,20 @@ plugins:
   - serverless-s3-local
   - serverless-dynamodb-local
   - serverless-offline
+  - serverless-ngrok-tunnel
+  - serverless-dotenv-plugin
 
 provider:
   name: aws
   runtime: nodejs12.x
   profile: s3local
 
-custom: 
+custom:
+  ngrokTunnel:
+    envPath: './.env'
+    tunnels:
+      - port: 3000
+        envProp: 'LI_IMPORT_WEBHOOK_HOST'
   s3:
     host: localhost
     port: 4569
