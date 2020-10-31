@@ -32,7 +32,7 @@ Note: make sure to configure an API token that has write rights.
 
 5. Start serverless with your profile
 ```
-AWS_PROFILE=s3local sls offline start
+AWS_PROFILE=s3local sls offline start --tunnel=true
 ```
 
 6. Get a test file
