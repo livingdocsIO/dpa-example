@@ -9,7 +9,7 @@
     "cheerio": "^1.0.0-rc.3",
     "lodash": "^4.17.19",
     "lodash.template": "^4.4.0",
-    "nanoid": "^3.1.12",
+    "nanoid": "^3.1.31",
     "serverless-dynamodb-client": "0.0.2",
     "serverless-dynamodb-local": "^0.2.39"
   },
